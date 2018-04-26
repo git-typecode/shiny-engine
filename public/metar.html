@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+<script src="jquery.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+<script src="script.js"></script>
+
+		<meta charset="UTF-8">
+			<style>
+			th, td {
+			padding: 10px;
+			}
+			
+			th {
+			background-color: #669999;
+			}
+			
+			table, th, td {
+			border: 1px solid black;
+			border-collapse: collapse;
+			font-family: 'Lato', sans-serif;
+			font-size: 16px;
+			}
+			
+			td.table {
+			padding: 5px;
+			}
+		body {
+		font-family: 'Lato', sans-serif;
+}
+			</style>
+    <script>
+      function load() {
+        console.log("load event detected!",new Date());
+      }
+      window.onload = start;
+    </script>
+			<title>
+			METAR
+			</title>
+		</head>
+	<body>
+	<h3>METAR</h3>
+	<table class = "table">
+	
+		<tr>
+			<th>Observation time</th>
+			<th>METAR</th>
+		
+		</tr>
+		<tr>
+			<td>152250</td>
+			<td>152250Z AUTO 27004KT 9999NDV NCD 05/05 Q1023 </td>
+		
+		</tr>
+		<tr>
+			<td>152220</td>
+			
+			<td>152220Z AUTO 24006KT 9999NDV NCD 06/05 Q1023</td>
+		</tr>
+
+	</table>
+<br>
+<br>
+<div id="container"></div>
+	</body>
+</html>

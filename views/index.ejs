@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="http://code.highcharts.com/modules/exporting.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+		body {
+			background-color: #ECECEC;
+			font-family: 'Lato', sans-serif;
+		}
+		.info-box {
+		border: 1px solid black;
+		background-color: white;
+		    margin-left:auto; 
+    margin-right:auto;
+	max-width: 600px;
+	padding: 5px;
+	margin-bottom:40px;
+	font-size: 16px;
+		
+		
+		}
+			th, td {
+			padding: 10px;
+			}
+			
+			th {
+			background-color: #669999;
+			}
+			
+			table, th, td {
+			border: 1px solid black;
+			border-collapse: collapse;
+			font-size: 16px;
+			font-family: 'Lato', sans-serif;
+			}
+			
+			td.table {
+			padding: 5px;
+			}
+			  table.metar-table {
+    margin-left:auto; 
+    margin-right:auto;
+	background-color: white;
+	font-family: 'Lato', sans-serif;
+	
+  }
+			</style>
+			<title>
+			METAR
+			</title>
+		</head>
+	<body>
+	<h2 style="text-align:center">METAR för flygplatser i Skåne</h2>
+	<div class = "info-box">
+		<p>Denna sidan visar METAR för de senaste 3h på Skånes flygplatser.<br>
+		METAR hämtas ifrån <a href="https://aro.lfv.se/Links/Link/ViewLink?TorLinkId=314&type=MET">aro.lfv.se</a><br>
+			<font color="red">METAR för Ljungbyhed är urfunktion. Flygplatsen är stängd och öppnar igen 28/2 enligt NOTAM.</font>
+		</p>
+	</div>
+	<table class = "metar-table">
+		<tr>
+			<th>AD</th>
+			<th>Observation time</th>
+			<th>ESTA / Ängelholm</th>
+		</tr>
+
+				<% metars[1].forEach(function(metar, index){ %>
+		<tr>
+			<td><%= metar.CCCC %></td>
+			<td><%= metar.obsTime %></td>
+			<td><%= metar.rawMetar.substring(8) %></td>
+		</tr>
+
+
+	<%});%>
+			<tr>
+			<th>AD</th>
+			<th>Observation time</th>
+			<th>ESMK / Kristanstad</th>
+		</tr>
+			<% metars[2].forEach(function(metar, index){ %>
+		<tr>
+			<td><%= metar.CCCC %></td>
+			<td><%= metar.obsTime %></td>
+			<td><%= metar.rawMetar.substring(8) %></td>
+		</tr>
+
+
+	<%});%>
+			<tr>
+			<th>AD</th>
+			<th>Observation time</th>
+			<th>ESMS / Malmö-Sturup</th>
+		</tr>
+					<% metars[3].forEach(function(metar, index){ %>
+		<tr>
+			<td><%= metar.CCCC %></td>
+			<td><%= metar.obsTime %></td>
+			<td><%= metar.rawMetar.substring(8) %></td>
+		</tr>
+		<%});%>
+					<tr>
+			<th>AD</th>
+			<th>Observation time</th>
+			<th>ESTL / Ljungbyhed</th>
+		</tr>
+		
+		<% metars[0].forEach(function(metar, index){ %>
+		<tr>
+			<td><%= metar.CCCC %></td>
+			<td><%= metar.obsTime %></td>
+			<td><%= metar.rawMetar.substring(8) %></td>
+		</tr>
+	<%});%>
+	
+	</table>
+
+	<script>
+//	 Highcharts.charts('container',{});
+	</script>
+	
+<div id = "container"
+</div>
+<br><br><br>
+	</body>
+</html>
